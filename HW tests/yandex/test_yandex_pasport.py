@@ -12,7 +12,7 @@ class TestYandexLogin(unittest.TestCase):
         self.driver.implicitly_wait(10)
 
     def test_login_yandex(self):
-        self.driver.get("https://passport.yandex.com/auth/")  # Change URL to yandex.com
+        self.driver.get("https://passport.yandex.com/auth/") 
 
         login_input = self.driver.find_element(By.ID, "passp-field-login")
         login_input.send_keys("YOUR_LOGIN")
@@ -24,7 +24,7 @@ class TestYandexLogin(unittest.TestCase):
 
         # Wait until the "My Contacts" link becomes visible
         success_element = WebDriverWait(self.driver, 10).until(
-            EC.visibility_of_element_located((By.PARTIAL_LINK_TEXT, "My Contacts"))
+            EC.visibility_of_element_located((By.PARTIAL_LINK_TEXT, "Мои контакты"))
         )
 
         # Check that the "My Contacts" link is indeed visible
